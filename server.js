@@ -13,6 +13,7 @@ app.use(express.json());
 app.use('/api/v1/users/', userRoutesV1);
 
 app.get("/", (req, res) => {
+    return res.json("App is running----")
     console.log("App is running------");
 });
 
