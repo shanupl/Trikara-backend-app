@@ -5,9 +5,11 @@ const path = require("path")
 const userRoutesV1 = require("./src/routes/v1/user.route")
 const { connectDB } = require('./src/config/db');
 const PORT = process.env.PORT || PORT;
+const cors = require("cors");
 
 connectDB();
 
+app.use(cors());
 app.use(express.json());
 
 app.use('/api/v1/users/', userRoutesV1);
