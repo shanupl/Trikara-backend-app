@@ -8,6 +8,12 @@ const todoSchema = mongoose.Schema({
     description: {
         type: String,
     },     
+    status: {
+        type: String,
+    },    
+    priority: {
+        type: String,
+    },
 
 }, {
     timestamps: true,
