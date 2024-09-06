@@ -10,7 +10,13 @@ const cors = require("cors");
 
 connectDB();
 
-app.use(cors());
+const corsOptions = {
+    origin: ['http://localhost:3000', 'https://trikara-backend-app.vercel.app', 'https://trikara-frontend-fmf2siy4w-shanupls-projects.vercel.app/' ], 
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true, 
+  };
+  
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use('/api/v1/users/', userRoutesV1);
